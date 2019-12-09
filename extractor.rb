@@ -1,6 +1,7 @@
 files_pattern = /^messages[[:digit:]]*.html$/
-messages_array = Dir.entries(".").select{|x| files_pattern === x}
-.map{|filename| File.readlines(filename)}.flatten
+files_names = Dir.entries(".").select{|x| files_pattern === x}
+p "Files: #{files_names.size}"
+messages_array = files_names.map{|filename| File.readlines(filename)}.flatten
 p "Strings: #{messages_array.size}"
 messages_string = messages_array.join
 p "Characters: #{messages_string.size}"
