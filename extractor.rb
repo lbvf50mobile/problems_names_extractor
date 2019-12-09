@@ -5,7 +5,7 @@ messages_array = files_names.map{|filename| File.readlines(filename)}.flatten
 p "Strings: #{messages_array.size}"
 messages_string = messages_array.join
 p "Characters: #{messages_string.size}"
-problems_urls = messages_string.scan(/https:\/\/leetcode.com\/problems\/[a-z.\/\-0-9]+/).uniq
+problems_urls = messages_string.scan(/https:\/\/leetcode.com\/problems\/[a-z.\-0-9]+/).uniq
 p "Problems: #{problems_urls.size}"
 
 
